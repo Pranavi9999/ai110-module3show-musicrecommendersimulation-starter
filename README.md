@@ -253,4 +253,4 @@ A few sentences about what you learned:
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
 
-![Terminal output showing the recommendations](image.png)
+![Terminal output showing the recommendations]([image.png](https://github.com/Pranavi9999/ai110-module3show-musicrecommendersimulation-starter/blob/main/image.png))
