@@ -31,6 +31,50 @@ You can include a simple diagram or bullet list if helpful.
 
 ---
 
+Real-world recommenders like Spotify don't rely on a single signal. They blend behavioral data with audio analysis (tempo, energy, acousticness) and contextual signals (time of day, device, activity) to build a continuous picture of taste. The system never asks you directly what you like. It infers it from patterns. This simulation takes a simpler, more transparent approach. Instead of learning from behavior, it uses an explicit user taste profile and scores every song by how closely its audio features match that profile. Rather than optimizing for engagement or retention, it prioritizes interpretability, every recommendation can be directly traced back to a specific feature match, making it easy to understand why a song was or wasn't recommended.
+
+Song features:
+
+- genre
+- mood 
+- energy 
+- tempo_bpm 
+- valence 
+- danceability 
+- acousticness
+
+UserProfile features:
+
+- favorite_genre 
+- favorite_mood 
+- target_energy 
+- likes_acoustic 
+
+## Algorithm Recipe
+
+SCORE(song, user) = genre_score + mood_score + energy_score + acoustic_score
+
+- Genre match  -> +1.5 if song.genre == user.favorite_genre
+- Mood match   -> +2.0 if song.mood == user.favorite_mood
+- Energy       -> 1.5 × gaussian(user.target_energy, song.energy, σ=0.2)
+- Acousticness -> 1.0 × gaussian(0.8 or 0.2, song.acousticness, σ=0.2)
+
+Maximum score: 6.0
+Ranking: sort descending, return top 3
+
+---
+
+## Expected Biases
+
+- Mood + genre together control 3.5 of 6.0 points, so a song that sounds
+  exactly right but misses both categories will rarely surface.
+
+- likes_acoustic is binary - users who prefer moderate acousticness
+  (around 0.5) have no way to express that nuance.
+
+- No diversity mechanism - the same 3 songs appear every time for the
+  same user profile, with no variation.
+
 ## Getting Started
 
 ### Setup
@@ -209,3 +253,4 @@ A few sentences about what you learned:
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
 
+![Terminal output showing the recommendations](image.png)
