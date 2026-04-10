@@ -253,6 +253,7 @@ A few sentences about what you learned:
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
 
+<<<<<<< HEAD
 <a href="C:\Users\prana\Codepath\AI class\ai110-module3show-musicrecommendersimulation-starter\image.png" target="_blank"><img src='C:\Users\prana\Codepath\AI class\ai110-module3show-musicrecommendersimulation-starter\image.png' title='Initial Recommendations' width='' alt='Initial Recommendations' class='center-block' /></a>
 
 ## Edge case profiles:
@@ -266,3 +267,6 @@ Edge case 2:
 Edge case 3:
 <a href="C:\Users\prana\Codepath\AI class\ai110-module3show-musicrecommendersimulation-starter\image-3.png" target="_blank"><img src='C:\Users\prana\Codepath\AI class\ai110-module3show-musicrecommendersimulation-starter\image-3.png' title='Edge Case 3' width='' alt='Edge Case 3' class='center-block' /></a>
 
+=======
+![Terminal output showing the recommendations]([image.png](https://github.com/Pranavi9999/ai110-module3show-musicrecommendersimulation-starter/blob/main/image.png))
+>>>>>>> fcd0bea072b040a76dcf026bd26bfa58049f0f88
