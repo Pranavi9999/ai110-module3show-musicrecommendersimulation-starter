@@ -22,6 +22,8 @@ def main() -> None:
         "likes_acoustic": False,
     }
 
+
+
     recommendations = recommend_songs(user_prefs, songs, k=5)
 
     print("=" * 50)
